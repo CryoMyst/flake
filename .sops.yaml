@@ -1,0 +1,16 @@
+keys:
+  - &admin age1m4w85ssu6xcqdsrx9053a09yq3lmjmwyd5p2m83q7psrsd0f9c3q0f00hn
+  - &systems_cryo-desktop age1fe7je8mlgds4xr0tu8rdqdl7ac003q02rdwn3jjeg9jfc25knumsy8vl43
+  - &systems_cryo-asahi age1xuhwpp9df6fplhjw6lwapv3na54fzfvxf5vmpckauj7frmpny3wsxdnxq0
+creation_rules:
+  # Backups of the private key under a master key in systems directory
+  - path_regex: ^hosts/.*/sops\.backup$
+    key_groups:
+    - age:
+      - *admin
+  - path_regex: ^modules/.*.\.sops\.(yaml|json|txt)$
+    key_groups:
+    - age:
+      - *admin
+      - *systems_cryo-desktop
+      - *systems_cryo-asahi
