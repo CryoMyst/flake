@@ -20,11 +20,11 @@ in {
     ./hardware-configuration.nix
   ];
 
-  nixpkgs.hostPlatform = {
-    gcc.arch = "znver3";
-    gcc.tune = "znver3";
-    system = "x86_64-linux";
-  };
+  # nixpkgs.hostPlatform = {
+  #   gcc.arch = "znver3";
+  #   gcc.tune = "znver3";
+  #   system = "x86_64-linux";
+  # };
 
   # boot.binfmt.emulatedSystems = emulateSystems;
   # nix.settings.extra-platforms = config.boot.binfmt.emulatedSystems;
